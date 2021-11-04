@@ -72,14 +72,15 @@ class SleepTrackerFragment : Fragment() {
             }
         })
 
-//        sleepTrackerViewModel.showSnackbarEvent.observe(this, Observer {
-//            if (it == true)
-//                Snackbar.make(requireActivity().findViewById(android.R.id.content),
-//                getString(R.string.cleared_message),
-//                Snackbar.LENGTH_SHORT).show()
-//
-//            sleepTrackerViewModel.doneShowingSnackbar()
-//        })
+        sleepTrackerViewModel.showSnackbarEvent.observe(this, Observer {
+            if (it == true) {
+                Snackbar.make(requireActivity().findViewById(android.R.id.content),
+                        getString(R.string.cleared_message),
+                        Snackbar.LENGTH_SHORT).show()
+
+                sleepTrackerViewModel.doneShowingSnackbar()
+            }
+        })
 
         return binding.root
     }
